@@ -10,18 +10,21 @@ public class Main26 {
 
     }
 
-    public static int removeDuplicates(int[] nums) {
-        if (nums.length == 0) {
+    /**
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     */
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
         int j = 0;
         for (int i = 1; i < nums.length; i++) {
             if (nums[j] != nums[i]) {
-                j++;
-                nums[j] = nums[i];
+                nums[++j] = nums[i];
             }
         }
-        return j + 1;
+        return j+1;
     }
 
 }
