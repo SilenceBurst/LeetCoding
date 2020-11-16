@@ -1,14 +1,14 @@
 package solution1_50;
 
+/**
+ * 11 盛最多水的容器
+ */
 public class Main11 {
 
     public static void main(String[] args) {
 
     }
 
-    /**
-     * 11 盛最多水的容器
-     */
     public static int maxArea(int[] height) {
         if (height.length < 2) {
             return 0;

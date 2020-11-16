@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 144. 二叉树的前序遍历
+ */
 public class Main144 {
 
     public static void main(String[] args) {
 
     }
 
-    /**
-     * 144. 二叉树的前序遍历
-     */
     public class TreeNode {
         int val;
         TreeNode left;

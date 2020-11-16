@@ -3,15 +3,14 @@ package solution401_450;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 429. N叉树的层序遍历
+ */
 public class Main429 {
 
     public static void main(String[] args) {
 
     }
-
-    /**
-     * 429. N叉树的层序遍历
-     */
 
     class Node {
         public int val;
