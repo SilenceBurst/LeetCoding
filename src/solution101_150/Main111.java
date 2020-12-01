@@ -1,4 +1,4 @@
-package solution51_100;
+package solution101_150;
 
 import java.util.LinkedList;
 import java.util.Queue;
