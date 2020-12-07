@@ -28,62 +28,6 @@ public class ArrayListvsLinkedList {
         addSecondLast();
     }
 
-    private static void addCenter() {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        long arrayListStartTime = System.currentTimeMillis();
-        for (int i = 100000; i > 0; i--) {
-            arrayList.add(arrayList.size() >> 1, i);
-        }
-        System.out.println("arrayList add Center consume time: " + (System.currentTimeMillis() - arrayListStartTime));
-
-        LinkedList<Integer> linkedList = new LinkedList<>();
-        long linkedListStartTime = System.currentTimeMillis();
-        for (int i = 100000; i > 0; i--) {
-            linkedList.add(linkedList.size() >> 1, i);
-        }
-        System.out.println("linkedList add Center consume time: " + (System.currentTimeMillis() - linkedListStartTime));
-    }
-
-    private static void addSecondLast() {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        long arrayListStartTime = System.currentTimeMillis();
-        for (int i = 500000; i > 0; i--) {
-            if (arrayList.size() > 0) {
-                arrayList.add(arrayList.size() - 1, i);
-            } else {
-                arrayList.add(i);
-            }
-        }
-        System.out.println("arrayList add Second Last consume time: " + (System.currentTimeMillis() - arrayListStartTime));
-
-        LinkedList<Integer> linkedList = new LinkedList<>();
-        long linkedListStartTime = System.currentTimeMillis();
-        for (int i = 500000; i > 0; i--) {
-            if (linkedList.size() > 0) {
-                linkedList.add(linkedList.size() - 1, i);
-            } else {
-                linkedList.add(i);
-            }
-        }
-        System.out.println("linkedList add Second Last consume time: " + (System.currentTimeMillis() - linkedListStartTime));
-    }
-
-    private static void addLast() {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        long arrayListStartTime = System.currentTimeMillis();
-        for (int i = 500000; i > 0; i--) {
-            arrayList.add(i);
-        }
-        System.out.println("arrayList add Last consume time: " + (System.currentTimeMillis() - arrayListStartTime));
-
-        LinkedList<Integer> linkedList = new LinkedList<>();
-        long linkedListStartTime = System.currentTimeMillis();
-        for (int i = 500000; i > 0; i--) {
-            linkedList.add(i);
-        }
-        System.out.println("linkedList add Last consume time: " + (System.currentTimeMillis() - linkedListStartTime));
-    }
-
     private static void addHead() {
         ArrayList<Integer> arrayList = new ArrayList<>();
         long arrayListStartTime = System.currentTimeMillis();
@@ -99,7 +43,6 @@ public class ArrayListvsLinkedList {
         }
         System.out.println("linkedList add Head consume time: " + (System.currentTimeMillis() - linkedListStartTime));
     }
-
 
     private static void addSecondHead() {
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -125,4 +68,59 @@ public class ArrayListvsLinkedList {
         System.out.println("linkedList add Second Head consume time: " + (System.currentTimeMillis() - linkedListStartTime));
     }
 
+    private static void addCenter() {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        long arrayListStartTime = System.currentTimeMillis();
+        for (int i = 100000; i > 0; i--) {
+            arrayList.add(arrayList.size() >> 1, i);
+        }
+        System.out.println("arrayList add Center consume time: " + (System.currentTimeMillis() - arrayListStartTime));
+
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        long linkedListStartTime = System.currentTimeMillis();
+        for (int i = 100000; i > 0; i--) {
+            linkedList.add(linkedList.size() >> 1, i);
+        }
+        System.out.println("linkedList add Center consume time: " + (System.currentTimeMillis() - linkedListStartTime));
+    }
+
+    private static void addSecondLast() {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        long arrayListStartTime = System.currentTimeMillis();
+        for (int i = 1000000; i > 0; i--) {
+            if (arrayList.size() > 0) {
+                arrayList.add(arrayList.size() - 1, i);
+            } else {
+                arrayList.add(i);
+            }
+        }
+        System.out.println("arrayList add Second Last consume time: " + (System.currentTimeMillis() - arrayListStartTime));
+
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        long linkedListStartTime = System.currentTimeMillis();
+        for (int i = 1000000; i > 0; i--) {
+            if (linkedList.size() > 0) {
+                linkedList.add(linkedList.size() - 1, i);
+            } else {
+                linkedList.add(i);
+            }
+        }
+        System.out.println("linkedList add Second Last consume time: " + (System.currentTimeMillis() - linkedListStartTime));
+    }
+
+    private static void addLast() {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        long arrayListStartTime = System.currentTimeMillis();
+        for (int i = 1000000; i > 0; i--) {
+            arrayList.add(i);
+        }
+        System.out.println("arrayList add Last consume time: " + (System.currentTimeMillis() - arrayListStartTime));
+
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        long linkedListStartTime = System.currentTimeMillis();
+        for (int i = 1000000; i > 0; i--) {
+            linkedList.add(i);
+        }
+        System.out.println("linkedList add Last consume time: " + (System.currentTimeMillis() - linkedListStartTime));
+    }
 }
