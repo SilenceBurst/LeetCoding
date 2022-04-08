@@ -1,5 +1,7 @@
 package proxy;
 
+import net.sf.cglib.proxy.Callback;
+import net.sf.cglib.proxy.Enhancer;
 import sun.misc.ProxyGenerator;
 
 import java.io.FileOutputStream;
@@ -14,7 +16,22 @@ public class Main {
 
 //        jdkDynamicProxy();
 
-        viewJdkProxy();
+//        viewJdkProxy();
+
+        cgLibProxy();
+    }
+
+    private static void cgLibProxy() {
+        // 动态代理增强类
+        Enhancer enhancer = new Enhancer();
+        // 要代理的类
+        enhancer.setSuperclass(Owner2.class);
+        // CgLibProxy的intercept中对原对象方法扩展
+        enhancer.setCallback(new CgLibProxy());
+        // 创建代理对象
+        Owner2 proxy = (Owner2) enhancer.create();
+        // 调用代理对象方法
+        proxy.saleHouse();
     }
 
     private static void jdkDynamicProxy() {
