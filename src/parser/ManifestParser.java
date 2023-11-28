@@ -30,6 +30,7 @@ public class ManifestParser {
 
             NodeList receivers = document.getElementsByTagName("receiver");
             printComponentsInfo(receivers, "Receiver", notDeclareList);
+
             System.out.println("===============printCopyCode==============");
             printCopyCode(notDeclareList);
         } catch (Exception e) {
@@ -52,10 +53,13 @@ public class ManifestParser {
                 Element element = (Element) node;
                 String name = element.getAttribute("android:name");
                 String exported = element.getAttribute("android:exported");
-                System.out.println(componentName + " Name: " + name);
-                System.out.println("Exported: " + (exported.isEmpty() ? "Not declared" : exported));
-                if (exported.isEmpty()) {
-                    notDeclareList.add(node);
+                NodeList intentFilters = element.getElementsByTagName("intent-filter");
+                if (intentFilters.getLength() > 0) {
+                    System.out.println(componentName + " Name: " + name);
+                    System.out.println("Exported: " + (exported.isEmpty() ? "Not declared" : exported));
+                    if (exported.isEmpty()) {
+                        notDeclareList.add(node);
+                    }
                 }
             }
         }
