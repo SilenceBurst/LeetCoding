@@ -42,6 +42,7 @@ public class ManifestParser {
         for (Node node : notDeclareList) {
             Element element = (Element) node;
             String elementName = element.getAttribute("android:name");
+            // exported默认为false，若需要更改为true，请手动更改
             System.out.println("<" + node.getNodeName() + " android:name=\"" + elementName + "\" " + "android:exported=\"false\"" + " tools:node=\"merge\"" + " />");
         }
     }
